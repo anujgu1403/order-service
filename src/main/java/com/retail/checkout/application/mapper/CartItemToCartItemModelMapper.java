@@ -15,6 +15,7 @@ public class CartItemToCartItemModelMapper {
                 .quantity(cartItem.getQuantity())
                 .createdDate(cartItem.getCreatedDate())
                 .unitPrice(cartItem.getUnitPrice())
+                .tax(cartItem.getTax())
                 .build();
     }
 }

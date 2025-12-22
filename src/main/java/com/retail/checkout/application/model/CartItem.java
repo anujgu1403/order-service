@@ -1,9 +1,8 @@
 package com.retail.checkout.application.model;
 
 import lombok.*;
-
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 
 @Data
 @Getter
@@ -17,5 +16,6 @@ public class CartItem {
     private Long itemNumber;
     private BigDecimal unitPrice;
     private int quantity;
-    private LocalDateTime createdDate;
+    private OffsetDateTime createdDate;
+    private BigDecimal tax;
 }

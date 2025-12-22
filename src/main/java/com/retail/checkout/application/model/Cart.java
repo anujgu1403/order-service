@@ -7,6 +7,7 @@ import lombok.*;
 import org.apache.tomcat.util.json.JSONFilter;
 
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.List;
 
 
@@ -20,7 +21,7 @@ import java.util.List;
 public class Cart {
     private Long cartId;
     private Long userId;
-    private LocalDateTime createdDate;
+    private OffsetDateTime createdDate;
     private boolean isActive;
     private List<CartItem> cartItems;
     private CartSummary cartSummary;

@@ -27,7 +27,6 @@ public class OrderRepositoryAdapter implements OrderRepository {
     public CartModel submitOrder(CartModel cartModel) {
         OrderEntity orderEntity = cartModelToOrderEntityMapper.apply(cartModel);
         orderEntity.setStatus("Submitted");
-        orderEntity.setTotalAmount(BigDecimal.TEN);
         return orderEntityToCartModelMapper.apply(orderJpaRepository.save(orderEntity));
     }
 }

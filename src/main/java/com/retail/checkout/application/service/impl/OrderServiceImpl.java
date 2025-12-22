@@ -4,10 +4,13 @@ import com.retail.checkout.application.mapper.CartModelToCartMapper;
 import com.retail.checkout.application.mapper.CartToCartModelMapper;
 import com.retail.checkout.application.model.Cart;
 import com.retail.checkout.application.service.OrderService;
-import com.retail.checkout.domain.model.CartModel;
+import com.retail.checkout.domain.operation.CartTotalsOperations;
+import com.retail.checkout.infrastructure.order.OrderConnector;
 import com.retail.checkout.infrastructure.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -21,10 +24,19 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     CartToCartModelMapper cartToCartModelMapper;
 
+    @Autowired
+    OrderConnector orderConnector;
+
 
     @Override
     public Cart submitOrder(Cart cart) {
-        CartModel cartModel = cartToCartModelMapper.apply(cart);
-        return cartModelToCartMapper.apply(orderRepository.submitOrder(cartModel));
+        return Optional.ofNullable(cart)
+                .map(cart1->cartToCartModelMapper.apply(cart))
+                .map(CartTotalsOperations::calculateCartSummary)
+                .map(cartModel->orderRepository.submitOrder(cartModel))
+                .map(cartModel -> orderConnector.pushOrderToKafka(cartModel))
+                .map(CartTotalsOperations::calculateCartSummary)
+                .map(cartModel -> cartModelToCartMapper.apply(cartModel))
+                .orElse(cart);
     }
 }

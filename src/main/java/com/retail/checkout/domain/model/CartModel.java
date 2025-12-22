@@ -1,8 +1,7 @@
 package com.retail.checkout.domain.model;
 
 import lombok.*;
-
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.List;
 
 @Data
@@ -11,10 +10,10 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-    public class CartModel {
+public class CartModel {
     private Long cartId;
     private Long userId;
-    private LocalDateTime createdDate;
+    private OffsetDateTime createdDate;
     private boolean isActive;
     private List<CartItemModel> cartItemModels;
     private CartSummaryModel cartSummaryModel;
