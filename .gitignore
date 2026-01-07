@@ -1,0 +1,12 @@
+:q# Gradle
+.gradle/
+build/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# OS
+.DS_Store
+
+
