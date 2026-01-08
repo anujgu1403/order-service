@@ -9,8 +9,3 @@ build/
 # OS
 .DS_Store
 
-
-
-/build/
-.gradle/
-.idea/

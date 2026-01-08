@@ -1,4 +1,4 @@
-package com.retail.checkout.infrastructure.config;
+package com.retail.cart.infrastructure.config;
 
 import lombok.Getter;
 import org.springframework.beans.factory.annotation.Value;

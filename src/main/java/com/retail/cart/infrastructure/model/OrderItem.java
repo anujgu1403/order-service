@@ -1,4 +1,4 @@
-package com.retail.checkout.infrastructure.model;
+package com.retail.cart.infrastructure.model;
 
 import lombok.*;
 

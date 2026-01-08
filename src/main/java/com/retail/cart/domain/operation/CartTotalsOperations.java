@@ -1,9 +1,9 @@
-package com.retail.checkout.domain.operation;
+package com.retail.cart.domain.operation;
 
 
-import com.retail.checkout.domain.model.CartItemModel;
-import com.retail.checkout.domain.model.CartModel;
-import com.retail.checkout.domain.model.CartSummaryModel;
+import com.retail.cart.domain.model.CartItemModel;
+import com.retail.cart.domain.model.CartModel;
+import com.retail.cart.domain.model.CartSummaryModel;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;

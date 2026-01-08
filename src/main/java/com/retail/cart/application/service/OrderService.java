@@ -1,6 +1,6 @@
-package com.retail.checkout.application.service;
+package com.retail.cart.application.service;
 
-import com.retail.checkout.application.model.Cart;
+import com.retail.cart.application.model.Cart;
 
 public interface OrderService {
     Cart submitOrder(Cart cart);

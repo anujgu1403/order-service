@@ -1,7 +1,7 @@
-package com.retail.checkout.infrastructure.mapper;
+package com.retail.cart.infrastructure.mapper;
 
-import com.retail.checkout.domain.model.CartSummaryModel;
-import com.retail.checkout.infrastructure.model.OrderSummary;
+import com.retail.cart.domain.model.CartSummaryModel;
+import com.retail.cart.infrastructure.model.OrderSummary;
 import org.springframework.stereotype.Component;
 
 @Component

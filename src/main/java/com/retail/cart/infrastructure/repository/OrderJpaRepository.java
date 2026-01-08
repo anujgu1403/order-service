@@ -1,6 +1,6 @@
-package com.retail.checkout.infrastructure.repository;
+package com.retail.cart.infrastructure.repository;
 
-import com.retail.checkout.infrastructure.entity.OrderEntity;
+import com.retail.cart.infrastructure.entity.OrderEntity;
 import org.springframework.data.jpa.repository.*;
 import org.springframework.stereotype.Repository;
 

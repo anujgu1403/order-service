@@ -1,7 +1,7 @@
-package com.retail.checkout.infrastructure.mapper;
+package com.retail.cart.infrastructure.mapper;
 
-import com.retail.checkout.domain.model.CartModel;
-import com.retail.checkout.infrastructure.model.OrderRequest;
+import com.retail.cart.domain.model.CartModel;
+import com.retail.cart.infrastructure.model.OrderRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

@@ -1,4 +1,4 @@
-package com.retail.checkout;
+package com.retail.cart;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Info;

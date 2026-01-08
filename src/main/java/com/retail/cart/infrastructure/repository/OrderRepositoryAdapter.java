@@ -1,9 +1,9 @@
-package com.retail.checkout.infrastructure.repository;
+package com.retail.cart.infrastructure.repository;
 
-import com.retail.checkout.domain.model.CartModel;
-import com.retail.checkout.infrastructure.entity.OrderEntity;
-import com.retail.checkout.infrastructure.mapper.OrderEntityToCartModelMapper;
-import com.retail.checkout.infrastructure.mapper.CartModelToOrderEntityMapper;
+import com.retail.cart.domain.model.CartModel;
+import com.retail.cart.infrastructure.entity.OrderEntity;
+import com.retail.cart.infrastructure.mapper.OrderEntityToCartModelMapper;
+import com.retail.cart.infrastructure.mapper.CartModelToOrderEntityMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;

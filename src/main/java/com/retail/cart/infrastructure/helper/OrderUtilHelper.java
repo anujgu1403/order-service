@@ -1,4 +1,4 @@
-package com.retail.checkout.infrastructure.helper;
+package com.retail.cart.infrastructure.helper;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
