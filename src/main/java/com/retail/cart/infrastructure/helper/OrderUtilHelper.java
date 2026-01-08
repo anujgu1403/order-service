@@ -3,9 +3,9 @@ package com.retail.cart.infrastructure.helper;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.retail.checkout.domain.model.CartItemModel;
-import com.retail.checkout.domain.model.CartModel;
-import com.retail.checkout.infrastructure.model.OrderRequest;
+import com.retail.cart.domain.model.CartItemModel;
+import com.retail.cart.domain.model.CartModel;
+import com.retail.cart.infrastructure.model.OrderRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 

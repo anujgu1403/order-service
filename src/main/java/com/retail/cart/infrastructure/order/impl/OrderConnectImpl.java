@@ -1,11 +1,11 @@
-package com.retail.checkout.infrastructure.order.impl;
+package com.retail.cart.infrastructure.order.impl;
 
-import com.retail.checkout.domain.model.CartModel;
-import com.retail.checkout.infrastructure.config.CartInfraProperties;
-import com.retail.checkout.infrastructure.helper.OrderUtilHelper;
-import com.retail.checkout.infrastructure.mapper.CartModelToOrderRequestMapper;
-import com.retail.checkout.infrastructure.model.OrderRequest;
-import com.retail.checkout.infrastructure.order.OrderConnector;
+import com.retail.cart.domain.model.CartModel;
+import com.retail.cart.infrastructure.config.CartInfraProperties;
+import com.retail.cart.infrastructure.helper.OrderUtilHelper;
+import com.retail.cart.infrastructure.mapper.CartModelToOrderRequestMapper;
+import com.retail.cart.infrastructure.model.OrderRequest;
+import com.retail.cart.infrastructure.order.OrderConnector;
 import com.retail.core.kafka.producer.KafkaMessageProducer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -5,8 +5,8 @@ import com.retail.cart.application.mapper.CartToCartModelMapper;
 import com.retail.cart.application.model.Cart;
 import com.retail.cart.application.service.OrderService;
 import com.retail.cart.domain.operation.CartTotalsOperations;
-import com.retail.checkout.infrastructure.order.OrderConnector;
-import com.retail.checkout.infrastructure.repository.OrderRepository;
+import com.retail.cart.infrastructure.order.OrderConnector;
+import com.retail.cart.infrastructure.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
