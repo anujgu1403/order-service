@@ -1,12 +1,8 @@
 package com.retail.cart.application.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
-import io.swagger.v3.core.util.Json;
 import lombok.*;
-import org.apache.tomcat.util.json.JSONFilter;
 
-import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.util.List;
 

@@ -16,8 +16,12 @@ import java.time.OffsetDateTime;
 @Builder
 public class CartItemModel {
     private Long cartItemId;
-    private Long itemNumber;
+    private Long productId;
+    private String productName;
+    private String description;
     private BigDecimal unitPrice;
+    private String imageUrl;
+    private Integer categoryId;
     private int quantity;
     private Long cartId;
     private OffsetDateTime createdDate;

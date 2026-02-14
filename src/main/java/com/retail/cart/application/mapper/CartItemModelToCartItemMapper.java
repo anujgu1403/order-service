@@ -12,10 +12,13 @@ public class CartItemModelToCartItemMapper {
         return CartItem.builder()
                 .cartId(cartItemModel.getCartId())
                 .cartItemId(cartItemModel.getCartItemId())
-                .itemNumber(cartItemModel.getItemNumber())
+                .productId(cartItemModel.getProductId())
                 .createdDate(cartItemModel.getCreatedDate())
                 .unitPrice(cartItemModel.getUnitPrice())
                 .quantity(cartItemModel.getQuantity())
+                .imageUrl(cartItemModel.getImageUrl())
+                .description(cartItemModel.getDescription())
+                .productName(cartItemModel.getProductName())
                 .tax(cartItemModel.getTax())
                 .build();
 

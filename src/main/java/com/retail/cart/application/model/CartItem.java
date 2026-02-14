@@ -13,8 +13,12 @@ import java.time.OffsetDateTime;
 public class CartItem {
     private Long cartItemId;
     private Long cartId;
-    private Long itemNumber;
+    private Long productId;
+    private String productName;
+    private String description;
     private BigDecimal unitPrice;
+    private String imageUrl;
+    private Integer categoryId;
     private int quantity;
     private OffsetDateTime createdDate;
     private BigDecimal tax;

@@ -26,13 +26,11 @@ order:
     producer:
       key-serializer: org.apache.kafka.common.serialization.StringSerializer
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
-
       backs: all
       retries: 3
       linger-ms: 5
       batch-size: 16384
       compression-type: snappy
-
       properties:
         enable.idempotence: true
         max.in.flight.requests.per.connection: 5

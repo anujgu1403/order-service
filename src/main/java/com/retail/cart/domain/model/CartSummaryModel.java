@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CartSummaryModel {
-    private BigDecimal subtotal;
-    private BigDecimal tax;
-    private BigDecimal grandTotal;
+    private BigDecimal subtotal = BigDecimal.ZERO;
+    private BigDecimal tax = BigDecimal.ZERO;
+    private BigDecimal grandTotal = BigDecimal.ZERO;
 }

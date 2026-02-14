@@ -13,9 +13,13 @@ import java.time.OffsetDateTime;
 @AllArgsConstructor
 public class OrderItem {
     private Long cartItemId;
-    private Long itemNumber;
-    private BigDecimal unitPrice;
     private int quantity;
     private Long cartId;
+    private Long productId;
+    private String productName;
+    private String description;
+    private BigDecimal unitPrice;
+    private String imageUrl;
+    private Integer categoryId;
     private OffsetDateTime createdDate;
 }
