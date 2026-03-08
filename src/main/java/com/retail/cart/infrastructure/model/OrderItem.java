@@ -3,6 +3,7 @@ package com.retail.cart.infrastructure.model;
 import lombok.*;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 
 @Data
@@ -21,5 +22,5 @@ public class OrderItem {
     private BigDecimal unitPrice;
     private String imageUrl;
     private Integer categoryId;
-    private OffsetDateTime createdDate;
+    private LocalDateTime createdDate;
 }

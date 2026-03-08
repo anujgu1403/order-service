@@ -1,6 +1,9 @@
 package com.retail.cart.domain.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
+
+import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.util.List;
 
@@ -13,7 +16,7 @@ import java.util.List;
 public class CartModel {
     private Long cartId;
     private Long userId;
-    private OffsetDateTime createdDate;
+    private LocalDateTime createdDate;
     private boolean isActive;
     private List<CartItemModel> cartItemModels;
     private CartSummaryModel cartSummaryModel;

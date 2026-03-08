@@ -39,3 +39,10 @@ order:
   jackson:
     serialization:
       write-dates-as-timestamps: false
+
+cart:
+  service:
+    url: http://localhost:8082/cart
+    connectionTimeout: 2000
+    readTimeout: 3000
+    retry: 3

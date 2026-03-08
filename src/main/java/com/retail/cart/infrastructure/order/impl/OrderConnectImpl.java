@@ -10,6 +10,7 @@ import com.retail.core.kafka.producer.KafkaMessageProducer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import reactor.core.publisher.Mono;
 
 @Service
 @RequiredArgsConstructor
@@ -28,10 +29,10 @@ public class OrderConnectImpl implements OrderConnector {
 
 
     @Override
-    public CartModel pushOrderToKafka(CartModel cartModel) {
+    public Mono<CartModel> pushOrderToKafka(CartModel cartModel) {
         OrderRequest orderRequest = cartModelToOrderRequestMapper.apply(cartModel);
         String orderString = orderUtilHelper.mapOrderToString(orderRequest);
         kafkaMessageProducer.send(cartInfraProperties.getOrderCaptureTopic(), String.valueOf(orderRequest.getOrderId()), orderString);
-        return cartModel;
+        return Mono.just(cartModel);
     }
 }

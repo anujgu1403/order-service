@@ -7,6 +7,7 @@ import com.retail.cart.domain.model.CartSummaryModel;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.util.Collections;
 import java.util.Optional;
 
 @NoArgsConstructor
@@ -18,19 +19,31 @@ public final class CartTotalsOperations {
                 .orElse(new CartSummaryModel());
 
         BigDecimal subTotal = Optional.of(cartModel)
-                .map(cartModel1 -> cartModel1.getCartItemModels()
+                .map(cartModel1 -> Optional.ofNullable(cartModel1.getCartItemModels())
+                        .orElse(Collections.emptyList())
                         .stream()
                         .map(cartItemModel ->
-                                cartItemModel.getUnitPrice()
-                                        .multiply(BigDecimal.valueOf(cartItemModel.getQuantity())))
+                        {
+                            BigDecimal price = Optional.ofNullable(cartItemModel.getUnitPrice())
+                                    .orElse(BigDecimal.ZERO);
+
+                            Integer qty = Optional.of(cartItemModel.getQuantity())
+                                    .orElse(0);
+
+                            return price.multiply(BigDecimal.valueOf(qty));
+                        })
                         .reduce(BigDecimal.ZERO, BigDecimal::add))
                 .orElse(BigDecimal.ZERO);
 
 
         BigDecimal totalTax = Optional.of(cartModel)
-                .map(cartModel1 -> cartModel1.getCartItemModels()
+                .map(cartModel1 -> Optional.ofNullable(cartModel1.getCartItemModels())
+                        .orElse(Collections.emptyList())
                         .stream()
-                        .map(CartItemModel::getTax)
+                        .map(cartItemModel -> {
+                            return Optional.ofNullable(cartItemModel.getTax())
+                                    .orElse(BigDecimal.ZERO);
+                        })
                         .reduce(BigDecimal.ZERO, BigDecimal::add))
                 .orElse(BigDecimal.ZERO);
 

@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.Builder;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 
 
@@ -24,6 +25,6 @@ public class CartItemModel {
     private Integer categoryId;
     private int quantity;
     private Long cartId;
-    private OffsetDateTime createdDate;
+    private LocalDateTime createdDate;
     private BigDecimal tax;
 }

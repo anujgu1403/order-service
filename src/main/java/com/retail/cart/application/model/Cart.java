@@ -3,6 +3,7 @@ package com.retail.cart.application.model;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 
+import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 import java.util.List;
 
@@ -17,7 +18,7 @@ import java.util.List;
 public class Cart {
     private Long cartId;
     private Long userId;
-    private OffsetDateTime createdDate;
+    private LocalDateTime createdDate;
     private boolean isActive;
     private List<CartItem> cartItems;
     private CartSummary cartSummary;

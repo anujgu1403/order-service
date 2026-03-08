@@ -6,6 +6,7 @@ import com.retail.cart.application.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("/order")
@@ -15,7 +16,7 @@ public class CheckoutControllerImpl implements CheckoutController {
     private OrderService orderService;
 
     @Override
-    public ResponseEntity<Cart> submitOrder(Cart cart) {
+    public ResponseEntity<Mono<Cart>> submitOrder(Cart cart) {
         return ResponseEntity.ok(orderService.submitOrder(cart));
     }
 }

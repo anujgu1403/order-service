@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "orders")
@@ -19,7 +19,7 @@ public class OrderEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "user_id", nullable = false, length = 50)
+    @Column(name = "user_id", nullable = true, length = 50)
     private Long userId;
 
     @Column(nullable = false, length = 30)
@@ -28,7 +28,7 @@ public class OrderEntity {
     @Column(name = "total_amount", nullable = false, precision = 12, scale = 2)
     private BigDecimal totalAmount;
 
-    @Column(nullable = false, length = 3)
+    @Column(nullable = true, length = 3)
     private String currency;
 
     @Column(name = "payment_status", nullable = false, length = 30)
@@ -40,23 +40,23 @@ public class OrderEntity {
     /**
      * Stored as JSONB in Postgres
      */
-    @Column(name = "cart_items", nullable = false)
+    @Column(name = "cart_items", nullable = false, columnDefinition = "TEXT")
     private String cartItems;
 
     @Column(name = "created_at", nullable = false, updatable = false)
-    private OffsetDateTime createdAt;
+    private LocalDateTime createdAt;
 
     @Column(name = "updated_at", nullable = false)
-    private OffsetDateTime updatedAt;
+    private LocalDateTime updatedAt;
 
     @PrePersist
     protected void onCreate() {
-        this.createdAt = OffsetDateTime.now();
-        this.updatedAt = OffsetDateTime.now();
+        this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
     }
 
     @PreUpdate
     protected void onUpdate() {
-        this.updatedAt = OffsetDateTime.now();
+        this.updatedAt = LocalDateTime.now();
     }
 }
